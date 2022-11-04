@@ -1,5 +1,6 @@
 {
 	"name": "contacts",
+	"homepage": "http://akeamwoods.github.io/Contacts",
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
