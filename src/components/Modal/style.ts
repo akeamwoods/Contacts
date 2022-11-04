@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 export const ModalWrapper = styled.div`
@@ -10,7 +11,7 @@ export const ModalWrapper = styled.div`
 	height: 100%;
 `;
 
-export const ModalContainer = styled.div`
+export const ModalContainer = styled(motion.div)`
 	background: #fff;
 	display: flex;
 	padding: 20px;

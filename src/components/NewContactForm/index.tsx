@@ -47,7 +47,11 @@ export const NewContactForm: React.FC<{
 				{errors.phone && <ErrorText>This field is required</ErrorText>}
 			</InputWrapper>
 			<InputWrapper>
-				<input {...register('age', { required: true, min: 1 })} type='number' />
+				<input
+					defaultValue={28}
+					{...register('age', { required: true, min: 1 })}
+					type='number'
+				/>
 				{errors.age && <ErrorText>This field is required</ErrorText>}
 			</InputWrapper>
 			<ButtonWrapper>
