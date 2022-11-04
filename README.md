@@ -37,7 +37,7 @@ This project uses framer-motion for animation https://github.com/framer/motion
 I've used Zustand https://github.com/pmndrs/zustand in this project instead of Redux. I've heard good things about Zustand so thought I would give it a try as an alternative to Redux (which I have used exstensively in the past)
 
 ### Table
-react-table is the package i used for handling the table component. I've implemented header sorting, e.g.:
+react-table https://www.npmjs.com/package/react-table is the package i used for handling the table component. I've implemented header sorting, e.g.:
 
 <img width="1383" alt="Screenshot 2022-11-04 at 16 34 48" src="https://user-images.githubusercontent.com/19963177/200028277-602e2805-1444-4e27-bbc3-0b99e62a51df.png">
 
