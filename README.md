@@ -4,7 +4,7 @@
 ## How to run
 + Clone the repo
 + Install locally using 'yarn'
-+ Begin dev server using 'yarn server'
++ **+ Begin dev server using 'yarn server'**
 + Begin frontend using 'yarn dev'
 
 ## About the project
