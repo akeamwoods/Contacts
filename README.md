@@ -15,7 +15,9 @@ To protect code quality, this project uses the following packages:
 + ESLint 
 + Prettier
 + Lint-staged
-These packages are used to add a pre-commit hook which checks code quality before it is committed to the codebase.
+These packages are used to add a pre-commit hook which checks code quality before it is committed to the codebase. E.g:
+<img width="309" alt="Screenshot 2022-11-04 at 16 14 32" src="https://user-images.githubusercontent.com/19963177/200024248-8de4e460-4543-4b24-ac15-88c6d4f9d480.png">
+
 
 ### Local Dev Server
 I have setup a local dev server using http-server to server the contacts.json to the frontend. This means you need to run the 'server' script from the package.json file in order for the data to be served to the frontend. The reason i've done this is that I wanted to show how I would handle fetching data from an api rather than just importing the json.
