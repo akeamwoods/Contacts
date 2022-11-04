@@ -1,6 +1,8 @@
 import Contact from './types/Contact';
 import { useQuery } from 'react-query';
 import { Table } from './components/Table';
+import { useEffect } from 'react';
+import { useStore } from './store/index';
 
 const getData: () => Promise<Contact[]> = async () =>
 	await (await fetch('/api/contacts.json')).json();
@@ -11,6 +13,7 @@ const App: React.FC = () => {
 		async () => await getData()
 	);
 
+	const { contacts, setContacts } = useStore();
 	const columns = [
 		{
 			Header: 'Name',
@@ -34,6 +37,10 @@ const App: React.FC = () => {
 		},
 	];
 
+	useEffect(() => {
+		if (data) setContacts(data);
+	}, [data]);
+
 	if (isLoading) return <div>Loading...</div>;
 
 	if (data == null) return <div>No data...</div>;
@@ -41,7 +48,7 @@ const App: React.FC = () => {
 	return (
 		<div>
 			<button>+</button>
-			<Table data={data} columns={columns} />
+			<Table data={contacts} columns={columns} />
 		</div>
 	);
 };
