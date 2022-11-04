@@ -1,16 +1,14 @@
 // @ts-nocheck
 import React from 'react';
 import { useTable, useSortBy } from 'react-table';
-import Contact from '../../types/Contact';
 import { Table as StyledTable } from './styles';
 
 interface TableProps {
 	columns: any[];
 	data: any[];
-	onRowClick: (contact: Contact) => void;
 }
 
-export const Table: React.FC<TableProps> = ({ columns, data, onRowClick }) => {
+export const Table: React.FC<TableProps> = ({ columns, data }) => {
 	const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
 		useTable(
 			{
@@ -43,11 +41,7 @@ export const Table: React.FC<TableProps> = ({ columns, data, onRowClick }) => {
 				{rows.map((row) => {
 					prepareRow(row);
 					return (
-						<tr
-							key={row.id}
-							{...row.getRowProps()}
-							onClick={() => onRowClick(row.original as Contact)}
-						>
+						<tr key={row.id} {...row.getRowProps()}>
 							{row.cells.map((cell) => (
 								<td key={cell.value} {...cell.getCellProps()}>
 									{cell.render('Cell')}

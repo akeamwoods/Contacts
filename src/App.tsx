@@ -75,7 +75,7 @@ const App: React.FC = () => {
 			)}
 			<div style={{ padding: '40px' }}>
 				<Header handleNewContact={() => setIsVisible(true)} />
-				<Table data={contacts} columns={columns} onRowClick={handleRowClick} />
+				<Table data={contacts} columns={columns} />
 			</div>
 		</>
 	);
