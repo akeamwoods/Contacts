@@ -18,6 +18,7 @@ To protect code quality, this project uses the following packages:
 + Lint-staged
 
 These packages are used to add a pre-commit hook which checks code quality before it is committed to the codebase. E.g:
+
 <img width="309" alt="Screenshot 2022-11-04 at 16 14 32" src="https://user-images.githubusercontent.com/19963177/200024248-8de4e460-4543-4b24-ac15-88c6d4f9d480.png">
 
 
