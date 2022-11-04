@@ -17,16 +17,7 @@ export const useStore = create<StoreState>((set) => ({
 	},
 	addContact: (contact: Contact) => {
 		set((state) => ({
-			contacts: [
-				...state.contacts,
-				{
-					name: 'Akeam Woods',
-					street: 'Ashfield Acres 1',
-					email: 'akeam@msn.com',
-					phone: '(721) 288-9108',
-					age: 24,
-				} as Contact,
-			],
+			contacts: [...state.contacts, contact],
 		}));
 	},
 	removeContact: (email: string) => {

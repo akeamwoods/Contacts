@@ -1,8 +1,12 @@
 import Contact from './types/Contact';
 import { useQuery } from 'react-query';
 import { Table } from './components/Table';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useStore } from './store/index';
+import { FaUserMinus } from 'react-icons/fa';
+import { Modal } from './components/Modal';
+import { NewContactForm } from './components/NewContactForm';
+import { Header } from './components/Header';
 
 const getData: () => Promise<Contact[]> = async () =>
 	await (await fetch('/api/contacts.json')).json();
@@ -13,7 +17,9 @@ const App: React.FC = () => {
 		async () => await getData()
 	);
 
-	const { contacts, setContacts, removeContact } = useStore();
+	const [isVisible, setIsVisible] = useState(false);
+
+	const { contacts, setContacts, removeContact, addContact } = useStore();
 	const columns = [
 		{
 			Header: 'Name',
@@ -35,6 +41,17 @@ const App: React.FC = () => {
 			Header: 'Age',
 			accessor: 'age',
 		},
+		{
+			accessor: 'delete',
+			Cell: ({ cell }: any) => (
+				<button
+					style={{ background: 'none', border: 'none', cursor: 'pointer' }}
+					onClick={() => handleRowClick(cell.row.values)}
+				>
+					<FaUserMinus size={16} />
+				</button>
+			),
+		},
 	];
 
 	useEffect(() => {
@@ -50,10 +67,20 @@ const App: React.FC = () => {
 	};
 
 	return (
-		<div>
-			<button>+</button>
-			<Table data={contacts} columns={columns} onRowClick={handleRowClick} />
-		</div>
+		<>
+			{isVisible && (
+				<Modal heading='New Contact' handleClose={() => setIsVisible(false)}>
+					<NewContactForm
+						addContact={addContact}
+						onClose={() => setIsVisible(false)}
+					/>
+				</Modal>
+			)}
+			<div style={{ padding: '40px' }}>
+				<Header handleNewContact={() => setIsVisible(true)} />
+				<Table data={contacts} columns={columns} onRowClick={handleRowClick} />
+			</div>
+		</>
 	);
 };
 
