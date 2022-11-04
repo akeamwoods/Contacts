@@ -13,7 +13,7 @@ const App: React.FC = () => {
 		async () => await getData()
 	);
 
-	const { contacts, setContacts } = useStore();
+	const { contacts, setContacts, removeContact } = useStore();
 	const columns = [
 		{
 			Header: 'Name',
@@ -45,10 +45,14 @@ const App: React.FC = () => {
 
 	if (data == null) return <div>No data...</div>;
 
+	const handleRowClick = (contact: Contact): void => {
+		removeContact(contact.email);
+	};
+
 	return (
 		<div>
 			<button>+</button>
-			<Table data={contacts} columns={columns} />
+			<Table data={contacts} columns={columns} onRowClick={handleRowClick} />
 		</div>
 	);
 };

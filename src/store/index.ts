@@ -5,6 +5,7 @@ interface StoreState {
 	contacts: Contact[];
 	setContacts: (contacts: Contact[]) => void;
 	addContact: (contact: Contact) => void;
+	removeContact: (email: string) => void;
 }
 
 export const useStore = create<StoreState>((set) => ({
@@ -26,6 +27,11 @@ export const useStore = create<StoreState>((set) => ({
 					age: 24,
 				} as Contact,
 			],
+		}));
+	},
+	removeContact: (email: string) => {
+		set((state) => ({
+			contacts: state.contacts.filter((contact) => contact.email !== email),
 		}));
 	},
 }));
