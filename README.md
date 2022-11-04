@@ -24,7 +24,7 @@ I have setup a local dev server using http-server to server the contacts.json to
 This project uses framer-motion for animation https://github.com/framer/motion
 
 ### State
-I've used Zustand in this project instead of Redux. I've heard good things about Zustand so thought I would give it a try as an alternative to Redux (which I have used exstensively in the past)
+I've used Zustand https://github.com/pmndrs/zustand in this project instead of Redux. I've heard good things about Zustand so thought I would give it a try as an alternative to Redux (which I have used exstensively in the past)
 
 ### Notes
 + I've wrote the components to be clean and reusable. E.g. the table component takes data and column properties, thus making it reusable elsewhere.
