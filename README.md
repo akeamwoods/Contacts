@@ -36,6 +36,12 @@ This project uses framer-motion for animation https://github.com/framer/motion
 ### State
 I've used Zustand https://github.com/pmndrs/zustand in this project instead of Redux. I've heard good things about Zustand so thought I would give it a try as an alternative to Redux (which I have used exstensively in the past)
 
+### Table
+react-table is the package i used for handling the table component. I've implemented header sorting, e.g.:
+
+<img width="1383" alt="Screenshot 2022-11-04 at 16 34 48" src="https://user-images.githubusercontent.com/19963177/200028277-602e2805-1444-4e27-bbc3-0b99e62a51df.png">
+
+
 ### Notes
 + I've wrote the components to be clean and reusable. E.g. the table component takes data and column properties, thus making it reusable elsewhere
 + The UI isn't super polished as the brief said to only spend 90 minutes. For an example of a more polished look, checkout this other tech test I did recently https://github.com/akeamwoods/Launches2022
