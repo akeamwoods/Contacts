@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from 'react';
 import { useTable, useSortBy } from 'react-table';
 import Contact from '../../types/Contact';
