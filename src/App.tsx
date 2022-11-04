@@ -1,12 +1,9 @@
 import Contact from './types/Contact';
 import { useQuery } from 'react-query';
-import { Table } from './components/Table';
 import { useEffect, useState } from 'react';
 import { useStore } from './store/index';
 import { FaUserMinus } from 'react-icons/fa';
-import { Modal } from './components/Modal';
-import { NewContactForm } from './components/NewContactForm';
-import { Header } from './components/Header';
+import { Header, Modal, NewContactForm, Table } from './components';
 
 const getData: () => Promise<Contact[]> = async () =>
 	await (await fetch('/api/contacts.json')).json();
